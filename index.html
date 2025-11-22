@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Lab 9 – Формы и валидация</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 500px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+input {
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.error {
+  color: red;
+  font-size: 13px;
+  height: 16px;
+}
+  </style>
+</head>
+<body>
+  <h1>Регистрация</h1>
+  <form id="form">
+    <label>
+      Имя:
+      <input type="text" name="name" id="name" required minlength="2" placeholder="Введите имя">
+      <span class="error" id="nameError"></span>
+    </label>
+    <label>
+      Email:
+      <input type="email" name="email" id="email" required placeholder="Введите email">
+      <span class="error" id="emailError"></span>
+    </label>
+    <label>
+      Пароль:
+      <input type="password" name="pass" id="pass" required minlength="6" placeholder="Минимум 6 символов">
+      <span class="error" id="passError"></span>
+    </label>
+    <button type="submit">Отправить</button>
+  </form>
+  <script src="app.js"></script>
+</body>
+</html>
